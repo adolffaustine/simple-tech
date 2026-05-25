@@ -1,0 +1,6 @@
+{
+  "name": "Simple Tech",
+  "description": "The official startup portfolio and showcase for Simple Tech. Explore our innovative tech solutions including EcoWater, the conversational Batlein business engine, embedded systems, networking, and custom AI consulting.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

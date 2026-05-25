@@ -1,0 +1,19 @@
+# Render Blueprint Specification
+# To deploy this project on Render:
+# 1. Export this repository to GitHub via the settings menu or zip download.
+# 2. Go to your Render Dashboard (https://dashboard.render.com).
+# 3. Create a new "Blueprint" and connect your repository.
+# 4. Render will automatically read this file and configure your web service.
+
+services:
+  - type: web
+    name: simple-tech
+    env: node
+    plan: starter
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: GEMINI_API_KEY
+        sync: false # Set your Gemini API key from Google AI Studio securely in Render's dashboard environment variables
