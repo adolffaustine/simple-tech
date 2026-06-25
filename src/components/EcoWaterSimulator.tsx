@@ -96,24 +96,24 @@ export default function EcoWaterSimulator() {
   };
 
   return (
-    <div className="bg-gray-950 border border-gray-800 rounded-2xl p-6 shadow-xl text-white">
+    <div className="bg-zinc-950 border border-zinc-800 rounded-2xl p-6 shadow-xl text-white">
       
       {/* Intro info */}
-      <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 border-b border-gray-800 pb-5 mb-6">
+      <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 border-b border-zinc-800 pb-5 mb-6">
         <div>
-          <span className="text-[10px] font-mono text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-2.5 py-1 rounded-full uppercase tracking-wider">
+          <span className="text-[10px] font-mono text-indigo-300 bg-indigo-500/10 border border-indigo-500/20 px-2.5 py-1 rounded-full uppercase tracking-wider">
             IoT EcoWater Purifier
           </span>
           <h3 className="text-xl font-bold font-sans text-white mt-2">
             EcoWater Smart Dispenser Simulator
           </h3>
-          <p className="text-xs text-gray-400">
+          <p className="text-xs text-zinc-300">
             Microcontroller hardware prototype using automated mesh arrays, UV-C sterilizers, and mineral release gates.
           </p>
         </div>
-        <div className="bg-gray-900 px-4 py-2 border border-gray-800 rounded-lg text-right">
-          <span className="text-[10px] font-mono text-gray-400 block uppercase">Project Metric</span>
-          <span className="text-lg font-bold font-mono text-emerald-400">$0.008 / Liter</span>
+        <div className="bg-zinc-900 px-4 py-2 border border-zinc-800 rounded-lg text-right">
+          <span className="text-[10px] font-mono text-zinc-400 block uppercase">Project Metric</span>
+          <span className="text-lg font-bold font-mono text-indigo-400">$0.008 / Liter</span>
         </div>
       </div>
 
@@ -123,8 +123,8 @@ export default function EcoWaterSimulator() {
         <div className="lg:col-span-7 space-y-6">
           
           {/* 1. Selection Source */}
-          <div className="bg-gray-900/60 p-4 border border-gray-800 rounded-xl">
-            <label className="text-xs font-mono text-gray-400 uppercase tracking-wider block mb-3">
+          <div className="bg-zinc-900/60 p-4 border border-zinc-800 rounded-xl">
+            <label className="text-xs font-mono text-zinc-400 uppercase tracking-wider block mb-3">
               1. Choose Input Untreated Water Source:
             </label>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
@@ -134,8 +134,8 @@ export default function EcoWaterSimulator() {
                   onClick={() => handleSourceChange(w.id)}
                   className={`p-2.5 text-xs font-medium rounded-lg border transition text-center ${
                     selectedSource.id === w.id
-                      ? "bg-emerald-500/15 border-emerald-400 text-emerald-400 shadow-md shadow-emerald-500/5"
-                      : "bg-gray-950 border-gray-800 text-gray-400 hover:border-gray-700 hover:text-white"
+                      ? "bg-indigo-500/15 border-indigo-450 text-indigo-300 shadow-md shadow-indigo-500/5"
+                      : "bg-zinc-950 border-zinc-800 text-zinc-400 hover:border-zinc-700 hover:text-white"
                   }`}
                   id={`water-source-${w.id}`}
                 >
@@ -144,7 +144,7 @@ export default function EcoWaterSimulator() {
               ))}
             </div>
             
-            <div className="flex flex-wrap gap-4 mt-3 pt-3 border-t border-gray-800/60 text-xs text-gray-400 font-mono">
+            <div className="flex flex-wrap gap-4 mt-3 pt-3 border-t border-zinc-800/60 text-xs text-zinc-300 font-mono">
               <div>Source TDS: <span className="text-white font-bold">{selectedSource.initialTds} ppm</span></div>
               <div>Turbidity: <span className="text-white font-bold">{selectedSource.initialTurbidity} NTU</span></div>
               <div>Pathogens: <span className="text-red-400 font-bold">{selectedSource.initialPathogens}% load</span></div>
@@ -152,8 +152,8 @@ export default function EcoWaterSimulator() {
           </div>
 
           {/* 2. Interactive Hardware Filters Toggle Matrix */}
-          <div className="bg-gray-900/60 p-4 border border-gray-800 rounded-xl">
-            <label className="text-xs font-mono text-gray-400 uppercase tracking-wider block mb-3">
+          <div className="bg-zinc-900/60 p-4 border border-zinc-800 rounded-xl">
+            <label className="text-xs font-mono text-zinc-400 uppercase tracking-wider block mb-3">
               2. Toggle Active Treatment Physical Hardware Stages:
             </label>
             
@@ -162,23 +162,23 @@ export default function EcoWaterSimulator() {
               {/* Mesh Filter Toggle */}
               <div 
                 className={`flex items-center justify-between p-3 rounded-lg border transition-all ${
-                  meshFilter ? "bg-emerald-500/5 border-emerald-500/30" : "bg-gray-950/60 border-gray-800"
+                  meshFilter ? "bg-indigo-500/5 border-indigo-500/35" : "bg-zinc-950/60 border-zinc-800"
                 }`}
               >
                 <div className="flex items-center gap-3">
-                  <div className={`p-1.5 rounded ${meshFilter ? "bg-emerald-500/20 text-emerald-400" : "bg-gray-800 text-gray-500"}`}>
+                  <div className={`p-1.5 rounded ${meshFilter ? "bg-indigo-500/20 text-indigo-300" : "bg-zinc-800 text-zinc-500"}`}>
                     <Filter size={16} />
                   </div>
                   <div>
                     <h4 className="text-xs font-bold text-white">Mechanical Micro-Mesh Grid</h4>
-                    <p className="text-[10px] text-gray-400">Removes mud, silt, and macroscopic particulate matter</p>
+                    <p className="text-[10px] text-zinc-350">Removes mud, silt, and macroscopic particulate matter</p>
                   </div>
                 </div>
                 <input
                   type="checkbox"
                   checked={meshFilter}
                   onChange={(e) => setMeshFilter(e.target.checked)}
-                  className="w-4 h-4 text-emerald-500 bg-gray-900 border-gray-700 rounded focus:ring-emerald-500 focus:ring-offset-gray-950 cursor-pointer"
+                  className="w-4 h-4 text-indigo-600 bg-zinc-900 border-zinc-700 rounded focus:ring-indigo-500 focus:ring-offset-zinc-950 cursor-pointer"
                   id="toggle-mesh-mesh"
                 />
               </div>
@@ -186,23 +186,23 @@ export default function EcoWaterSimulator() {
               {/* Activated Charcoal Toggle */}
               <div 
                 className={`flex items-center justify-between p-3 rounded-lg border transition-all ${
-                  charcoalFilter ? "bg-emerald-500/5 border-emerald-500/30" : "bg-gray-950/60 border-gray-800"
+                  charcoalFilter ? "bg-indigo-500/5 border-indigo-500/35" : "bg-zinc-950/60 border-zinc-800"
                 }`}
               >
                 <div className="flex items-center gap-3">
-                  <div className={`p-1.5 rounded ${charcoalFilter ? "bg-emerald-500/20 text-emerald-400" : "bg-gray-800 text-gray-500"}`}>
+                  <div className={`p-1.5 rounded ${charcoalFilter ? "bg-indigo-500/20 text-indigo-300" : "bg-zinc-800 text-zinc-500"}`}>
                     <Sliders size={16} />
                   </div>
                   <div>
                     <h4 className="text-xs font-bold text-white">Granular Charcoal Grid</h4>
-                    <p className="text-[10px] text-gray-400">Absorbs chemical pesticides, heavy chlorine, and foul odor</p>
+                    <p className="text-[10px] text-zinc-355">Absorbs chemical pesticides, heavy chlorine, and foul odor</p>
                   </div>
                 </div>
                 <input
                   type="checkbox"
                   checked={charcoalFilter}
                   onChange={(e) => setCharcoalFilter(e.target.checked)}
-                  className="w-4 h-4 text-emerald-500 bg-gray-900 border-gray-700 rounded focus:ring-emerald-500 focus:ring-offset-gray-950 cursor-pointer"
+                  className="w-4 h-4 text-indigo-600 bg-zinc-900 border-zinc-700 rounded focus:ring-indigo-500 focus:ring-offset-zinc-950 cursor-pointer"
                   id="toggle-charcoal-grid"
                 />
               </div>
@@ -210,23 +210,23 @@ export default function EcoWaterSimulator() {
               {/* UV Sterilize Toggle */}
               <div 
                 className={`flex items-center justify-between p-3 rounded-lg border transition-all ${
-                  uvSterilizer ? "bg-emerald-500/5 border-emerald-500/30" : "bg-gray-950/60 border-gray-800"
+                  uvSterilizer ? "bg-indigo-500/5 border-indigo-500/35" : "bg-zinc-950/60 border-zinc-800"
                 }`}
               >
                 <div className="flex items-center gap-3">
-                  <div className={`p-1.5 rounded ${uvSterilizer ? "bg-emerald-500/20 text-emerald-400 animate-pulse" : "bg-gray-800 text-gray-500"}`}>
+                  <div className={`p-1.5 rounded ${uvSterilizer ? "bg-indigo-500/20 text-indigo-300 animate-pulse" : "bg-zinc-800 text-zinc-500"}`}>
                     <Sparkles size={16} />
                   </div>
                   <div>
                     <h4 className="text-xs font-bold text-white">High-Intensified UV-C Reactor</h4>
-                    <p className="text-[10px] text-gray-400">Disrupts bacterial, amoebic and viral DNA pathologically</p>
+                    <p className="text-[10px] text-zinc-350">Disrupts bacterial, amoebic and viral DNA pathologically</p>
                   </div>
                 </div>
                 <input
                   type="checkbox"
                   checked={uvSterilizer}
                   onChange={(e) => setUvSterilizer(e.target.checked)}
-                  className="w-4 h-4 text-emerald-500 bg-gray-900 border-gray-700 rounded focus:ring-emerald-500 focus:ring-offset-gray-950 cursor-pointer"
+                  className="w-4 h-4 text-indigo-600 bg-zinc-900 border-zinc-700 rounded focus:ring-indigo-500 focus:ring-offset-zinc-950 cursor-pointer"
                   id="toggle-uv-sterilizer"
                 />
               </div>
@@ -234,23 +234,23 @@ export default function EcoWaterSimulator() {
               {/* Re-Mineralization Toggle */}
               <div 
                 className={`flex items-center justify-between p-3 rounded-lg border transition-all ${
-                  mineralizer ? "bg-emerald-500/5 border-emerald-500/30" : "bg-gray-950/60 border-gray-800"
+                  mineralizer ? "bg-indigo-500/5 border-indigo-500/35" : "bg-zinc-950/60 border-zinc-800"
                 }`}
               >
                 <div className="flex items-center gap-3">
-                  <div className={`p-1.5 rounded ${mineralizer ? "bg-emerald-500/20 text-emerald-400" : "bg-gray-800 text-gray-500"}`}>
+                  <div className={`p-1.5 rounded ${mineralizer ? "bg-indigo-500/20 text-indigo-300" : "bg-zinc-800 text-zinc-500"}`}>
                     <Droplet size={16} />
                   </div>
                   <div>
                     <h4 className="text-xs font-bold text-white">Magnesium & Calcium Re-balancer</h4>
-                    <p className="text-[10px] text-gray-400">Optimizes water taste alkalinity and adds rich organic trace minerals</p>
+                    <p className="text-[10px] text-zinc-350">Optimizes water taste alkalinity and adds rich organic trace minerals</p>
                   </div>
                 </div>
                 <input
                   type="checkbox"
                   checked={mineralizer}
                   onChange={(e) => setMineralizer(e.target.checked)}
-                  className="w-4 h-4 text-emerald-500 bg-gray-900 border-gray-700 rounded focus:ring-emerald-500 focus:ring-offset-gray-950 cursor-pointer"
+                  className="w-4 h-4 text-indigo-600 bg-zinc-900 border-zinc-700 rounded focus:ring-indigo-500 focus:ring-offset-zinc-950 cursor-pointer"
                   id="toggle-remineralizer"
                 />
               </div>
@@ -261,16 +261,16 @@ export default function EcoWaterSimulator() {
         </div>
 
         {/* Right Column: Output telemetry state */}
-        <div className="lg:col-span-5 bg-gray-900 border border-gray-800 rounded-xl p-5 flex flex-col justify-between">
+        <div className="lg:col-span-5 bg-zinc-900 border border-zinc-800 rounded-xl p-5 flex flex-col justify-between">
           <div>
-            <span className="text-[10px] font-mono text-gray-500 uppercase tracking-wider block mb-4">
+            <span className="text-[10px] font-mono text-zinc-400 uppercase tracking-wider block mb-4">
               Real-time Output Sensor Telemetry
             </span>
             
             {/* Visual Health Rating Dial */}
-            <div className="text-center py-4 border-b border-gray-850">
-              <span className="text-[10px] font-mono text-gray-400 block mb-1 uppercase">Purity Safety Rating</span>
-              <div className="relative inline-flex items-center justify-center p-6 bg-gray-950 rounded-full border border-gray-800 ring-4 ring-gray-900/40">
+            <div className="text-center py-4 border-b border-zinc-800">
+              <span className="text-[10px] font-mono text-zinc-400 block mb-1 uppercase">Purity Safety Rating</span>
+              <div className="relative inline-flex items-center justify-center p-6 bg-zinc-950 rounded-full border border-zinc-800 ring-4 ring-zinc-900/40">
                 <span className={`text-3xl font-extrabold font-mono transition-colors duration-500 ${
                   healthRating >= 90 ? "text-emerald-400" : healthRating >= 70 ? "text-yellow-400" : "text-red-400"
                 }`}>
@@ -296,10 +296,10 @@ export default function EcoWaterSimulator() {
               {/* TDS gauge */}
               <div>
                 <div className="flex justify-between text-xs mb-1 font-mono">
-                  <span className="text-gray-400">Total Dissolved Solids (TDS):</span>
+                  <span className="text-zinc-300">Total Dissolved Solids (TDS):</span>
                   <span className="text-white font-bold">{tds} ppm</span>
                 </div>
-                <div className="w-full bg-gray-950 h-1.5 rounded-full overflow-hidden border border-gray-800">
+                <div className="w-full bg-zinc-950 h-1.5 rounded-full overflow-hidden border border-zinc-800">
                   <div 
                     className={`h-full transition-all duration-500 ${
                       tds <= 250 ? "bg-emerald-400" : tds <= 600 ? "bg-yellow-400" : "bg-red-400"
@@ -307,7 +307,7 @@ export default function EcoWaterSimulator() {
                     style={{ width: `${Math.min(100, (tds / 1200) * 100)}%` }}
                   />
                 </div>
-                <span className="text-[9px] font-mono text-gray-500 mt-0.5 block leading-normal">
+                <span className="text-[9px] font-mono text-zinc-500 mt-0.5 block leading-normal">
                   WHO target: 100-300 ppm for excellent taste.
                 </span>
               </div>
@@ -315,12 +315,12 @@ export default function EcoWaterSimulator() {
               {/* Turbidity gauge */}
               <div>
                 <div className="flex justify-between text-xs mb-1 font-mono">
-                  <span className="text-gray-400">Turbidity (Sediment Mud):</span>
+                  <span className="text-zinc-300">Turbidity (Sediment Mud):</span>
                   <span className="text-white font-bold">{turbidity} NTU</span>
                 </div>
-                <div className="w-full bg-gray-950 h-1.5 rounded-full overflow-hidden border border-gray-800">
+                <div className="w-full bg-zinc-950 h-1.5 rounded-full overflow-hidden border border-zinc-800">
                   <div 
-                    className="h-full bg-cyan-400 transition-all duration-500"
+                    className="h-full bg-sky-400 transition-all duration-500"
                     style={{ width: `${turbidity}%` }}
                   />
                 </div>
@@ -329,12 +329,12 @@ export default function EcoWaterSimulator() {
               {/* Biotic pathogen safety */}
               <div>
                 <div className="flex justify-between text-xs mb-1 font-mono">
-                  <span className="text-gray-400">Pathogens Safety (Bacteria/Virus):</span>
+                  <span className="text-zinc-300">Pathogens Safety (Bacteria/Virus):</span>
                   <span className={`font-bold ${pathogens === 0 ? "text-emerald-400" : "text-red-400"}`}>
                     {pathogens === 0 ? "0% (Fully Sterile)" : `${pathogens}% Alert`}
                   </span>
                 </div>
-                <div className="w-full bg-gray-950 h-1.5 rounded-full overflow-hidden border border-gray-800">
+                <div className="w-full bg-zinc-950 h-1.5 rounded-full overflow-hidden border border-zinc-800">
                   <div 
                     className={`h-full transition-all duration-500 ${
                       pathogens === 0 ? "bg-emerald-400" : "bg-red-500"
@@ -345,8 +345,8 @@ export default function EcoWaterSimulator() {
               </div>
 
               {/* Final Taste profile */}
-              <div className="flex items-center justify-between text-xs font-mono bg-gray-950 border border-gray-850 p-2.5 rounded-lg">
-                <span className="text-gray-400">Alkaline Taste Profile:</span>
+              <div className="flex items-center justify-between text-xs font-mono bg-zinc-950 border border-zinc-850 p-2.5 rounded-lg">
+                <span className="text-zinc-300">Alkaline Taste Profile:</span>
                 <span className={`font-bold px-2 py-0.5 rounded ${
                   taste === "Great" ? "text-emerald-400 bg-emerald-500/10 border border-emerald-500/20" : "text-yellow-400 bg-yellow-500/10 border border-yellow-500/20"
                 }`}>
@@ -357,9 +357,9 @@ export default function EcoWaterSimulator() {
             </div>
           </div>
 
-          <div className="mt-5 pt-4 border-t border-gray-800 bg-gray-950/40 p-3 rounded-lg text-[11px] text-gray-400 leading-normal space-y-1 font-sans">
+          <div className="mt-5 pt-4 border-t border-zinc-800 bg-zinc-950/40 p-3 rounded-lg text-[11px] text-zinc-400 leading-normal space-y-1 font-sans">
             <span className="text-white font-bold block mb-1">Affordable Hardware Innovation:</span>
-            Designed with non-proprietary high-efficiency mechanical mesh coupled with custom electronic solar chargers. Simple Tech licenses this device schematic cheaply to support sanitation access!
+            Designed with non-proprietary high-efficiency mechanical mesh coupled with custom electronic solar chargers. Sintel Tech licenses this device schematic cheaply to support sanitation access!
           </div>
 
         </div>

@@ -53,8 +53,8 @@ app.post("/api/batlein/chat", async (req, res) => {
       {
         reply: "Hello! Based on your request, I identified two premium web agencies ready to assist.",
         matches: [
-          { name: "Simple Tech Web Studio", category: "Web & Systems Dvp", description: "Our elite web development team. We build lighting fast React portals.", phone: "+1 (555) 1000", address: "Simple Tech HQ (Remote/Global)", matchScore: 100, accentColor: "#10b981" },
-          { name: "Apex NetSolutions", category: "Networking", description: "High performance wireless setups and remote server diagnostics.", phone: "+1 (555) 0399", address: "Highroad Pl, Ste 2", matchScore: 89, accentColor: "#6366f1" }
+          { name: "Sintel Tech Web Studio", category: "Web & Systems Dvp", description: "Our elite web development team. We build lighting fast React portals.", phone: "+1 (555) 1000", address: "Sintel Tech HQ (Remote/Global)", matchScore: 100, accentColor: "#6366f1" },
+          { name: "Apex NetSolutions", category: "Networking", description: "High performance wireless setups and remote server diagnostics.", phone: "+1 (555) 0399", address: "Highroad Pl, Ste 2", matchScore: 89, accentColor: "#8b5cf6" }
         ]
       }
     ];
@@ -64,11 +64,11 @@ app.post("/api/batlein/chat", async (req, res) => {
 
   try {
     const ai = getGeminiClient();
-    const systemInstruction = `You are the core intelligence of Batlein App, an ultra-fast business connection engine built by Simple Tech.
+    const systemInstruction = `You are the core intelligence of Batlein App, an ultra-fast business connection engine built by Sintel Tech.
 The user is describing what they want or what business problem they have. You must do two things:
 1. Provide a warm, conversational, 1-to-2 sentence response explaining that you matched their need.
 2. Formulate 1 to 3 realistic mock matches (such as local plumbers, technicians, web developers, food suppliers, system architects) that can perfectly execute their request.
-Include interesting contact numbers, real-world sounding addresses, matching scores, and choose high-contrast accent colors (e.g., #0ea5e9 for blue, #10b981 for green, #f59e0b for amber, #6366f1 for purple, #ec4899 for pink).
+Include interesting contact numbers, real-world sounding addresses, matching scores, and choose high-contrast accent colors (e.g., #6366f1 for indigo, #8b5cf6 for violet, #38bdf8 for sky, #4f46e5 for blue, #d946ef for pink).
 
 You MUST output strictly in JSON format according to the schema specified.`;
 
@@ -116,7 +116,7 @@ You MUST output strictly in JSON format according to the schema specified.`;
   }
 });
 
-// 2. Simple Tech Blueprint Planner Endpoint
+// 2. Sintel Tech Blueprint Planner Endpoint
 app.post("/api/consult/blueprint", async (req, res) => {
   const { companyName, industry, ideaDescription } = req.body;
   if (!ideaDescription) {
@@ -132,19 +132,19 @@ app.post("/api/consult/blueprint", async (req, res) => {
         "Create modular CAD enclosure prototype for the physical IoT node block.",
         "Program analog-to-digital sensor conversion filters in C++ for maximum low-noise inputs.",
         "Implement end-to-end TLS encryption with custom token hardware authorization keys.",
-        "Build live cloud dashboard with automated text-message alert channels using Simple Tech web integrations."
+        "Build live cloud dashboard with automated text-message alert channels using Sintel Tech web integrations."
       ],
       estimatedHardwareCost: "$85.00 per physical device in batch sizes of 100",
       networkingSecurityPlan: "Use hardware-accelerated SHA-256 signatures, restrict listening ports, and deploy custom local VPN routing.",
-      simpleTechValueAdd: "Simple Tech provides continuous network monitoring, initial electronic circuit assembly, diagnostics, and web dashboard hosting."
+      sintelTechValueAdd: "Sintel Tech provides continuous network monitoring, initial electronic circuit assembly, diagnostics, and web dashboard hosting."
     });
   }
 
   try {
     const ai = getGeminiClient();
-    const systemInstruction = `You are Simple Tech's Chief Technology Officer (CTO) AI Assistant.
-A company or innovator is presenting their idea to Simple Tech. You need to analyze their concept (combining AI, Electronics, Embedded, Networking, Web/Systems, or Maintenance) and output a highly professional, inspiring step-by-step engineering blueprint and tech stack.
-Describe how Simple Tech will help them turn their idea into a working reality. Keep descriptions extremely realistic, clear, professional, and free of fluff.`;
+    const systemInstruction = `You are Sintel Tech's Chief Technology Officer (CTO) AI Assistant.
+A company or innovator is presenting their idea to Sintel Tech. You need to analyze their concept (combining AI, Electronics, Embedded, Networking, Web/Systems, or Maintenance) and output a highly professional, inspiring step-by-step engineering blueprint and tech stack.
+Describe how Sintel Tech will help them turn their idea into a working reality. Keep descriptions extremely realistic, clear, professional, and free of fluff.`;
 
     const prompt = `Company: ${companyName || "Innovator"}
 Industry: ${industry || "General Technology"}
@@ -158,7 +158,7 @@ Idea Description: ${ideaDescription}`;
         responseMimeType: "application/json",
         responseSchema: {
           type: Type.OBJECT,
-          required: ["recommendedStack", "keyArchitectureSteps", "estimatedHardwareCost", "networkingSecurityPlan", "simpleTechValueAdd"],
+          required: ["recommendedStack", "keyArchitectureSteps", "estimatedHardwareCost", "networkingSecurityPlan", "sintelTechValueAdd"],
           properties: {
             recommendedStack: {
               type: Type.ARRAY,
@@ -178,9 +178,9 @@ Idea Description: ${ideaDescription}`;
               type: Type.STRING,
               description: "Core networking structure, firewalls, protocols, or cyber-safety strategies relevant."
             },
-            simpleTechValueAdd: {
+            sintelTechValueAdd: {
               type: Type.STRING,
-              description: "A summary of how Simple Tech's experts can design, assemble, program, or maintain this specific idea."
+              description: "A summary of how Sintel Tech's experts can design, assemble, program, or maintain this specific idea."
             }
           }
         }
@@ -224,7 +224,7 @@ async function configureServer() {
   }
 
   app.listen(PORT, "0.0.0.0", () => {
-    console.log(`Simple Tech full-stack server running successfully on host 0.0.0.0:${PORT}`);
+    console.log(`Sintel Tech full-stack server running successfully on host 0.0.0.0:${PORT}`);
   });
 }
 

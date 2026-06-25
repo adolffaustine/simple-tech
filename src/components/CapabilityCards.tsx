@@ -65,17 +65,17 @@ export default function CapabilityCards() {
   const renderIcon = (type: string) => {
     switch (type) {
       case "ai":
-        return <Sparkles className="text-amber-400 group-hover:animate-bounce" size={24} />;
+        return <Sparkles className="text-indigo-400 group-hover:animate-bounce" size={24} />;
       case "electronics":
-        return <Cpu className="text-emerald-400 group-hover:rotate-12 transition-transform duration-300" size={24} />;
+        return <Cpu className="text-violet-400 group-hover:rotate-12 transition-transform duration-300" size={24} />;
       case "networking":
-        return <Radio className="text-cyan-400 group-hover:scale-110 transition-transform duration-300" size={24} />;
+        return <Radio className="text-sky-400 group-hover:scale-110 transition-transform duration-300" size={24} />;
       case "web":
-        return <Globe className="text-indigo-400 group-hover:spin transition-all" size={24} />;
+        return <Globe className="text-blue-400 group-hover:spin transition-all" size={24} />;
       case "maintenance":
-        return <Wrench className="text-pink-400 group-hover:-rotate-12 transition-transform duration-300" size={24} />;
+        return <Wrench className="text-purple-400 group-hover:-rotate-12 transition-transform duration-300" size={24} />;
       default:
-        return <Lightbulb className="text-rose-400 animate-pulse" size={24} />;
+        return <Lightbulb className="text-pink-400 animate-pulse" size={24} />;
     }
   };
 
@@ -85,8 +85,8 @@ export default function CapabilityCards() {
         <h2 className="text-2xl md:text-3xl font-extrabold font-sans tracking-tight text-white mb-3">
           Our Technology Capabilities
         </h2>
-        <p className="text-gray-400 text-sm">
-          Simple Tech delivers simple, cost-efficient, hardware-integrated digital solutions across key domain fields to empower modern operations.
+        <p className="text-zinc-300 text-sm">
+          Sintel Tech delivers reliable, cost-efficient, hardware-integrated digital solutions across key domain fields to empower modern operations.
         </p>
       </div>
 
@@ -95,38 +95,38 @@ export default function CapabilityCards() {
           <div
             key={cap.id}
             id={cap.id}
-            className="group relative bg-gray-900/40 border border-gray-800 rounded-xl p-5 hover:border-emerald-500/40 hover:bg-gray-900/80 transition-all duration-300 shadow-sm flex flex-col justify-between"
+            className="group relative bg-zinc-900/50 border border-zinc-800 rounded-xl p-5 hover:border-indigo-500/40 hover:bg-zinc-900/80 transition-all duration-300 shadow-lg hover:shadow-indigo-500/5 flex flex-col justify-between"
           >
             <div>
               {/* Header inside Card */}
               <div className="flex items-center justify-between mb-4">
-                <div className="p-2.5 bg-gray-950 rounded-lg border border-gray-800 group-hover:border-emerald-500/20 group-hover:bg-gray-900 transition-colors">
+                <div className="p-2.5 bg-zinc-950 rounded-lg border border-zinc-800 group-hover:border-indigo-500/20 group-hover:bg-zinc-900 transition-colors">
                   {renderIcon(cap.iconName)}
                 </div>
-                <span className="text-[10px] font-mono bg-gray-800 text-gray-300 border border-gray-700 px-2 py-0.5 rounded-full">
+                <span className="text-[10px] font-mono bg-zinc-800 text-zinc-200 border border-zinc-700 px-2.5 py-0.5 rounded-full">
                   {cap.badge}
                 </span>
               </div>
 
               {/* Title & Description */}
-              <h3 className="text-lg font-bold font-sans text-white group-hover:text-emerald-400 transition-colors mb-2">
+              <h3 className="text-lg font-bold font-sans text-white group-hover:text-indigo-400 transition-colors mb-2">
                 {cap.title}
               </h3>
-              <p className="text-xs text-gray-400 leading-relaxed mb-4">
+              <p className="text-xs text-zinc-300 leading-relaxed mb-4">
                 {cap.description}
               </p>
             </div>
 
             {/* Technical Sub-specs */}
-            <div className="border-t border-gray-800/60 pt-3">
-              <span className="text-[10px] font-mono text-gray-500 block mb-2 uppercase tracking-widest">
+            <div className="border-t border-zinc-800/80 pt-3">
+              <span className="text-[10px] font-mono text-zinc-400 block mb-2 uppercase tracking-widest">
                 Deliverables
               </span>
               <div className="flex flex-wrap gap-1.5">
                 {cap.specs.map((spec, index) => (
                   <span
                     key={index}
-                    className="text-[10px] bg-gray-950/80 text-gray-300 px-2 py-0.5 rounded border border-gray-800 group-hover:border-gray-700/60 transition-colors"
+                    className="text-[10px] bg-zinc-950/80 text-zinc-200 px-2 py-0.5 rounded border border-zinc-800 group-hover:border-zinc-700 transition-colors"
                   >
                     {spec}
                   </span>

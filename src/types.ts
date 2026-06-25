@@ -21,7 +21,7 @@ export interface CustomBlueprint {
   keyArchitectureSteps: string[];
   estimatedHardwareCost: string;
   networkingSecurityPlan: string;
-  simpleTechValueAdd: string;
+  sintelTechValueAdd: string;
 }
 
 export interface TechCapability {
